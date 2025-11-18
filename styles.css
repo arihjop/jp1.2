@@ -1,14 +1,11 @@
 :root {
     --bg: #ffffff;
-    --bg2: #f4f4f4;
     --card: #ffffff;
     --text: #222222;
     --text-light: #555555;
 
-    /* COR DOS LINKS (você pode trocar aqui) */
-    --link-color: #000000;
+    --link-color: #5062ff;
 
-    /* Cores oficiais dos ícones */
     --whatsapp: #25D366;
     --instagram1: #F58529;
     --instagram2: #DD2A7B;
@@ -16,18 +13,33 @@
     --instagram4: #515BD4;
 }
 
+/* ========================= */
+/* ANIMAÇÃO DE ENTRADA */
+/* ========================= */
+.animar, .fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+}
+
+.fade {
+    transform: translateY(15px);
+}
+
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================= */
+/* ESTILO GERAL */
+/* ========================= */
 body {
-    background: var(--bg);
-    color: var(--text);
+    background: #ffffff; /* cor fixa do fundo */
+    color: #222222; /* cor fixa do texto */
     font-family: 'Inter', Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-a {
-    color: var(--link-color); /* altera cor do link sem mexer nos ícones */
-    text-decoration: none;
-    font-weight: 500;
 }
 
 header {
@@ -47,8 +59,12 @@ header {
 h1 {
     font-size: 34px;
     margin-top: 15px;
-    letter-spacing: 1px;
-    color: black;
+    color: #222222; /* cor fixa do título */
+}
+
+.sub {
+    font-size: 16px;
+    color: #555555; /* cor fixa do subtítulo */
 }
 
 .container {
@@ -58,46 +74,60 @@ h1 {
 }
 
 .card {
-    background: var(--card);
+    background: #ffffff; /* cor fixa do card */
     padding: 22px;
     border-radius: 16px;
     margin-top: 25px;
     box-shadow: 0 0 25px #e0e0e0;
     border: 1px solid #ddd;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 35px #d4d4d4;
 }
 
 .card h2 {
     margin-bottom: 10px;
-    color: black;
+    color: #000000; /* cor fixa do título do card */
     font-size: 22px;
 }
 
 ul {
     padding-left: 20px;
     line-height: 1.7rem;
-    color: var(--text-light);
+    color: #555555; /* cor fixa do texto secundário */
 }
 
 footer {
     text-align: center;
     padding: 25px;
-    color: var(--text-light);
+    color: #555555; /* cor fixa do footer */
     margin-top: 30px;
     font-size: 15px;
 }
 
-/* ===================== */
-/* ÍCONES COM CORES OFICIAIS */
-/* ===================== */
+/* ========================= */
+/* LINKS SEM SUBLINHADO */
+/* ========================= */
+a {
+    text-decoration: none;
+    color: #5062ff; /* cor fixa do link */
+}
 
+a:hover {
+    color: #537bff; /* cor fixa do hover */
+    text-decoration: none;
+}
+
+.contato-link {
+    text-decoration: none;
+    color: #537bff;;
+}
+
+.contato-link:hover {
+    color: #537bff;
+}
+
+/* ========================= */
+/* ÍCONES */
 .icon-whatsapp {
-    color: var(--whatsapp);
+    color: #25D366; /* verde WhatsApp */
     font-size: 22px;
     margin-right: 6px;
 }
@@ -105,19 +135,22 @@ footer {
 .icon-instagram {
     font-size: 22px;
     margin-right: 6px;
-
-    /* Degradê oficial */
-    background: linear-gradient(45deg,
-        var(--instagram1),
-        var(--instagram2),
-        var(--instagram3),
-        var(--instagram4)
-    );
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4); /* gradiente fixo Instagram */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Responsivo */
+/* ========================= */
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+    .card {
+        padding: 20px;
+    }
+}
+
 @media (max-width: 480px) {
     .profile-img {
         width: 120px;
@@ -127,109 +160,16 @@ footer {
     h1 {
         font-size: 26px;
     }
-}
-a {
-    color: #5062ff;
-    text-decoration: none; /* opcional: remove o sublinhado */
-}
-
-a:hover {
-    color: #537bff; /* opcional: cor ao passar o mouse */
-}
-
-
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--text-muted)
-}
-/* ===========================
-      RESPONSIVIDADE MOBILE
-   =========================== */
-
-@media (max-width: 768px) {
-
-    /* Container geral */
-    .container {
-        padding: 16px;
-    }
-
-    /* Header */
-    .profile-box {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-img {
-        width: 130px;
-        height: 130px;
-    }
-
-    .title {
-        font-size: 26px;
-    }
 
     .sub {
         font-size: 14px;
     }
 
-    .actions {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    /* Card geral */
     .card {
-        padding: 20px;
+        padding: 18px;
     }
 
-    .card-inner {
-        padding: 14px;
-    }
-
-    /* Grid vira 1 coluna */
-    .grid {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
-    }
-
-    /* Texto */
-    p, li {
+    ul, p {
         font-size: 15px;
-        line-height: 1.45;
-    }
-
-    /* Botão copiar */
-    .copy {
-        margin-top: 4px;
-        padding: 6px 8px;
-    }
-}
-
-
-/* Responsividade extra para telas muito pequenas (tipo celulares antigos) */
-@media (max-width: 480px) {
-
-    .profile-img {
-        width: 110px;
-        height: 110px;
-    }
-
-    .title {
-        font-size: 22px;
-    }
-
-    .card {
-        padding: 16px;
-    }
-
-    .card-inner {
-        padding: 12px;
-    }
-
-    p, li {
-        font-size: 14px;
     }
 }

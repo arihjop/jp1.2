@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Pedro • Técnico de Informática</title>
 
-    <!-- Font Awesome (Ícones) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <img class="profile-img" src="img1.jpg" alt="">
+<header class="fade">
+    <img class="profile-img" src="img1.jpg" alt="João Pedro">
     <h1>João Pedro</h1>
     <p class="sub">Técnico de Informática • 17 anos</p>
 </header>
 
 <div class="container">
 
-    <section class="card">
-        <h2>Frase </h2>
+    <section class="card animar">
+        <h2>Frase</h2>
         <p>Em busca de uma oportunidade para mostrar minha dedicação e crescer profissionalmente.</p>
     </section>
 
-    <section class="card">
+    <section class="card animar">
         <h2>Contato</h2>
 
         <p><strong>WhatsApp:</strong>
@@ -36,27 +36,26 @@
         </p>
 
         <p><strong>Instagram:</strong>
-            <a class="contato-link" href="https://www.instagram.com/jp.martinst?igsh=ejRsYW5pZnJ3eWhh" target="_blank">
+            <a class="contato-link" href="https://www.instagram.com/jp.martinst" target="_blank">
                 <i class="fab fa-instagram icon-instagram"></i>
-                @jp.martins 
+                @jp.martins
             </a>
         </p>
 
-    
     </section>
 
-    <section class="card">
+    <section class="card animar">
         <h2>Habilidades</h2>
         <ul>
             <li>Manutenção de Computadores</li>
             <li>Otimização de Sistemas</li>
             <li>Redes e Cabeamento</li>
             <li>HTML • CSS • JavaScript</li>
-            <li>Experiente no Pacote Office (Word, Excel e PowerPoint).</li>
+            <li>Experiente no Pacote Office (Word, Excel e PowerPoint)</li>
         </ul>
     </section>
 
-    <section class="card">
+    <section class="card animar">
         <h2>Experiência</h2>
         <ul>
             <li>Suporte Técnico</li>
@@ -68,9 +67,20 @@
 
 </div>
 
-<footer>
+<footer class="fade">
     © João Pedro — Técnico de Informática
 </footer>
+
+<!-- SCRIPT ANIMAÇÃO -->
+<script>
+    const elementos = document.querySelectorAll(".animar, .fade");
+
+    elementos.forEach((el, i) => {
+        setTimeout(() => {
+            el.classList.add("mostrar");
+        }, i * 200); // intervalo entre cada card
+    });
+</script>
 
 </body>
 </html>
