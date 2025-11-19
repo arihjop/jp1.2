@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,77 +11,85 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="fade">
-    <img class="profile-img" src="img1.jpg" alt="João Pedro">
-    <h1>João Pedro</h1>
-    <p class="sub">Técnico de Informática • 17 anos</p>
-</header>
+    <header class="fade">
+        <img class="profile-img" src="img1.jpg" alt="João Pedro">
+        <h1>João Pedro</h1>
+        <p class="sub">Técnico de Informática • 17 anos</p>
 
-<div class="container">
+        <div class="tags">
+            <span>Suporte Técnico</span>
+            <span>Montagem de PCs</span>
+            <span>Pacote Office</span>
+        </div>
+    </header>
 
-    <section class="card animar">
-        <h2>Frase</h2>
-        <p>Em busca de uma oportunidade para mostrar minha dedicação e crescer profissionalmente.</p>
-    </section>
+    <div class="container">
 
-    <section class="card animar">
-        <h2>Contato</h2>
+        <section class="card animar">
+            <h2>Resumo Profissional</h2>
+            <p class="texto">
+                Jovem da área de informática, com experiência em suporte técnico, manutenção de computadores,
+                redes e otimização de sistemas. Busco uma oportunidade para aplicar minhas habilidades e crescer
+                profissionalmente dentro da tecnologia.
+            </p>
+        </section>
 
-        <p><strong>WhatsApp:</strong>
-            <a class="contato-link" href="https://wa.me/5533998407970" target="_blank">
-                <i class="fab fa-whatsapp icon-whatsapp"></i>
-                (33) 99840-7970
-            </a>
-        </p>
+        <!-- CONTATO EXATAMENTE COMO ESTAVA ANTES -->
+        <section class="card animar">
+            <h2>Contato</h2>
 
-        <p><strong>Instagram:</strong>
-            <a class="contato-link" href="https://www.instagram.com/jp.martinst" target="_blank">
-                <i class="fab fa-instagram icon-instagram"></i>
-                @jp.martins
-            </a>
-        </p>
+            <p><strong>WhatsApp:</strong>
+                <a class="contato-link" href="https://wa.me/5533998407970" target="_blank">
+                    <i class="fab fa-whatsapp icon-whatsapp"></i>
+                    (33) 99840-7970
+                </a>
+            </p>
 
-    </section>
+            <p><strong>Instagram:</strong>
+                <a class="contato-link" href="https://www.instagram.com/jp.martinst" target="_blank">
+                    <i class="fab fa-instagram icon-instagram"></i>
+                    @jp.martins
+                </a>
+            </p>
 
-    <section class="card animar">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Manutenção de Computadores</li>
-            <li>Otimização de Sistemas</li>
-            <li>Redes e Cabeamento</li>
-            <li>HTML • CSS • JavaScript</li>
-            <li>Experiente no Pacote Office (Word, Excel e PowerPoint)</li>
-        </ul>
-    </section>
+        </section>
 
-    <section class="card animar">
-        <h2>Experiência</h2>
-        <ul>
-            <li>Suporte Técnico</li>
-            <li>Formatação e Montagem de PCs</li>
-            <li>Configuração de Redes</li>
-            <li>Gerente Operacional – Bar Pé na Roça</li>
-        </ul>
-    </section>
+        <section class="card animar">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>Montagem, manutenção e formatação de computadores</li>
+                <li>Otimização e limpeza de sistemas</li>
+                <li>Redes, cabeamento e configuração</li>
+                <li>HTML • CSS • JavaScript</li>
+                <li>Experiente no Pacote Office (Word, Excel e PowerPoint)</li>
+            </ul>
+        </section>
 
-</div>
+        <section class="card animar">
+            <h2>Experiência</h2>
+            <ul>
+                <li>Suporte Técnico — Autônomo</li>
+                <li>Montagem e formatação de PCs</li>
+                <li>Configuração e manutenção de redes</li>
+                <li>Gerente Operacional — Bar Pé na Roça</li>
+            </ul>
+        </section>
 
-<footer class="fade">
-    © João Pedro — Técnico de Informática
-</footer>
+    </div>
 
-<!-- SCRIPT ANIMAÇÃO -->
-<script>
-    const elementos = document.querySelectorAll(".animar, .fade");
+    <footer class="fade">
+        © João Pedro — Técnico de Informática
+    </footer>
 
-    elementos.forEach((el, i) => {
-        setTimeout(() => {
-            el.classList.add("mostrar");
-        }, i * 200); // intervalo entre cada card
-    });
-</script>
+    <script>
+        document.querySelectorAll(".animar, .fade").forEach((el, i) => {
+            setTimeout(() => el.classList.add("mostrar"), i * 180);
+        });
+    </script>
 
 </body>
+
 </html>

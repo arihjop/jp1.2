@@ -16,14 +16,11 @@
 /* ========================= */
 /* ANIMAÇÃO DE ENTRADA */
 /* ========================= */
-.animar, .fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s ease;
-}
-
+.animar,
 .fade {
-    transform: translateY(15px);
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.7s ease;
 }
 
 .mostrar {
@@ -35,11 +32,10 @@
 /* ESTILO GERAL */
 /* ========================= */
 body {
-    background: #ffffff; /* cor fixa do fundo */
-    color: #222222; /* cor fixa do texto */
+    background: var(--bg);
+    color: var(--text);
     font-family: 'Inter', Arial, sans-serif;
     margin: 0;
-    padding: 0;
 }
 
 header {
@@ -59,14 +55,29 @@ header {
 h1 {
     font-size: 34px;
     margin-top: 15px;
-    color: #222222; /* cor fixa do título */
 }
 
 .sub {
     font-size: 16px;
-    color: #555555; /* cor fixa do subtítulo */
+    color: var(--text-light);
 }
 
+/* TAGS */
+.tags {
+    margin-top: 10px;
+}
+
+.tags span {
+    background: #f1f1f1;
+    padding: 6px 14px;
+    border-radius: 15px;
+    margin: 4px;
+    font-size: 14px;
+}
+
+/* ========================= */
+/* CARDS */
+/* ========================= */
 .container {
     max-width: 900px;
     margin: auto;
@@ -74,7 +85,7 @@ h1 {
 }
 
 .card {
-    background: #ffffff; /* cor fixa do card */
+    background: var(--card);
     padding: 22px;
     border-radius: 16px;
     margin-top: 25px;
@@ -84,50 +95,34 @@ h1 {
 
 .card h2 {
     margin-bottom: 10px;
-    color: #000000; /* cor fixa do título do card */
     font-size: 22px;
 }
 
 ul {
     padding-left: 20px;
     line-height: 1.7rem;
-    color: #555555; /* cor fixa do texto secundário */
+    color: var(--text-light);
 }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #555555; /* cor fixa do footer */
-    margin-top: 30px;
-    font-size: 15px;
-}
-
-/* ========================= */
-/* LINKS SEM SUBLINHADO */
-/* ========================= */
+/* LINKS */
 a {
     text-decoration: none;
-    color: #5062ff; /* cor fixa do link */
+    color: var(--link-color);
 }
 
 a:hover {
-    color: #537bff; /* cor fixa do hover */
-    text-decoration: none;
+    color: #3f55ff;
 }
 
 .contato-link {
-    text-decoration: none;
-    color: #537bff;;
-}
-
-.contato-link:hover {
-    color: #537bff;
+    color: var(--link-color);
 }
 
 /* ========================= */
 /* ÍCONES */
+/* ========================= */
 .icon-whatsapp {
-    color: #25D366; /* verde WhatsApp */
+    color: var(--whatsapp);
     font-size: 22px;
     margin-right: 6px;
 }
@@ -135,22 +130,20 @@ a:hover {
 .icon-instagram {
     font-size: 22px;
     margin-right: 6px;
-    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4); /* gradiente fixo Instagram */
+    background: linear-gradient(45deg, var(--instagram1), var(--instagram2), var(--instagram3), var(--instagram4));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* ========================= */
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .container {
-        padding: 16px;
-    }
-    .card {
-        padding: 20px;
-    }
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-light);
+    margin-top: 30px;
 }
 
+/* RESPONSIVO */
 @media (max-width: 480px) {
     .profile-img {
         width: 120px;
@@ -165,11 +158,8 @@ a:hover {
         font-size: 14px;
     }
 
-    .card {
-        padding: 18px;
-    }
-
-    ul, p {
+    ul,
+    p {
         font-size: 15px;
     }
 }
